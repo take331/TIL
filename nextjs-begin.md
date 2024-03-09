@@ -1,4 +1,16 @@
 # Next.js Beginning
+## Next.jsについて
+Next.jsはVercelによって開発された**Reactのフレームワーク**
+
+開発効率の向上だけでなく、サイトパフォーマンスやSEOの改善に貢献する  
+
+こんな特徴がある  
+- サーバーサイドレンダリング(SSR)
+- 性的サイト生成(SG)
+- ルーティング
+- 自動コード分割
+
+
 ## pages ディレクトリを使う方法(Next.jsを学び始める際につまずいた為)
 > https://qiita.com/mu_tomoya/items/7545bea039e82e483f9e  
 
