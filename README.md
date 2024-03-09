@@ -1,0 +1,2 @@
+#### nextjs-begin.md
+- pagesディレクトリの使用方法
