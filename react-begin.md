@@ -175,7 +175,67 @@ import { Content, Title } from "./index";
 ```
 
 ## State
+Hooks = クラスコンポーネントの機能に接続する(Hook Up)
 
+### なぜStateを使うのか
+コンポーネント内の要素をDOMで書き換えるのは、NG🙅‍♂️  
+新しい値をつかって再レンダリングさせる🙆‍♂️  
+Reactが再レンダリングを行うきっかけ  
+- Stateが変更されたとき
+- propsが変更されたとき
+
+#### propsとstateは何が違う？🤔
+propsは引数のように**親から子に渡される値** (逆はできない)  
+stateは**コンポーネントの内部で宣言、制御される値** (stateはpropsに渡すこともできる)   
+
+### useState
+1. useStateによるstateの宣言
+``` jsx
+// state: 現在の状態
+// setState: 更新関数
+// initialState: 初期値
+const [state, setState] = useState(initilState);
+```
+2. stateの更新 
+``` jsx
+// newState: 新しい値
+setState(newState);
+```
+### stateをpropsに渡す
+``` jsx
+
+const Article = (props) => {
+  const [isPublished, setIsPublished] = useState(false);
+  // 更新関数はそのままpropsとして渡さずに関数化して渡す
+  const publishArticle = () => {
+    setIsPublished(true);
+  }
+  return (
+    <div>
+      <Title title={props.title} />
+      <Content content={props.content} />
+      <PublishButton isPublished=isPublished onClick={setIsPublished} />
+  );
+};
+
+```
+
+※ propsへ状態関数を渡す際の注意点  
+OKな渡し方
+``` jsx
+// 関数自体を渡す
+<PublishButton isPublished={isPublished} onClick={publishArticle} />
+```
+``` jsx
+// コールバック関数を渡す
+<PublishButton isPublished={isPublished} onClick={() => publishArticle()} />
+```
+
+NGな渡し方
+``` jsx
+// 渡すときに関数を実行する(無限ループに陥る)
+<PublishButton isPublished={isPublished} onClick={publishArticle()} />
+```
 
 
 
