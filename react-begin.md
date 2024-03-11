@@ -6,7 +6,7 @@ Facebock社が開発したUIライブラリ　　
 
 このコンポーネントを組み合わせてWebの画面を作っていく  
 
-## なぜReactを使うのか
+### なぜReactを使うのか
 Reactを使用しない画面描画では、DOMを直接変更してHTMLを再描画する必要があり、これはコストが高い😥
 ※DOM(Document Object Model) = HTMLにアクセスする窓口
 
@@ -126,7 +126,7 @@ code .
   同じ記述を何度もする必要がない
   
 - コードの見通しを良くするため  
-  1ファイル = 1コンポーネント
+  原則 1ファイル = 1コンポーネント(なんのためのパーツなのか、責務を明確にする)
   
 - 変更に強くするため🔧  
   1箇所を修正するだけでOK
@@ -137,6 +137,44 @@ code .
 - 親コンポーネントで**import**
 - **props**でデータを渡す
 
+## improt・export
+- default export (名前なしexport)
+
+宣言したアロー関数をexport
+``` jsx
+const Title = (props) => {
+  return <h2>{props.title}</h2>
+};
+export default title
+```
+名前付き関数宣言と同時にexport
+``` jsx
+export default function Title(props) {
+  return <h2>{props.title}</h2>
+};
+ ```
+
+- default import (名前なしimport)
+``` jsx
+import Article from "./compornents/Article";
+ ```
+
+- named export (名前付きexport)
+
+Reactではエントリポイント(index.js)でよく使う
+``` jsx
+// default という名前のモジュールにエイリアス(別名)をつけてexport
+export {default as Article} from './Article';
+export {default as Title} from './Title';
+export {default as Content} from './Content';
+```
+
+- named import (名前付きimprot)
+``` jsx
+import { Content, Title } from "./index";
+```
+
+## State
 
 
 
