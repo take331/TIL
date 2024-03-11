@@ -67,5 +67,56 @@ return (
 );
 ```
 
+## 環境構築
+### Create React App
+Reactのツールチェイン  
+> Reactで新しいシングルページアプリケーション(SPA)を作成するのに最も良い方法です
+
+本来のReact環境構築には以下の設定が必要😒
+- トランスパイラのBabel
+- バンドラーのWebpack
+→　Reactの初学者がやるべきことではない！
+
+```
+npx create-react-app [app name]
+```
+→　Happy hucking!　が表示されたらOK😊
+
+```
+cd [app name]
+code .
+```
+
+<img src="https://github.com/take331/TIL/assets/73569757/c99b8654-6358-44ef-b970-bfafd910110e" width=300px />  
+初期状態  
+
+- src  
+  開発用ファイルが格納される  
+  ReactのコンポーネントのJSXファイルなどを格納するフォルダ
+  
+- public  
+  静的ファイルが格納される  (htmlファイルや画像ファイルなど)
+  
+- build(npm run build で生成)  
+  デプロイするファイルが格納される
+
+### scripts(package.json)  
+<img src="https://github.com/take331/TIL/assets/73569757/010cb9b7-f317-4d94-b800-a386f96a3c9c" width= 300px />  
+
+- npm start
+  ローカルサーバーを起動してReactアプリを確認できる👀  
+  (ホットリロード)
+
+- num run build  
+  本番用ファイルを作成してbuildディレクトリ二出力👉  
+  srcとpublicを一つにまとめる(バンドル)
+
+- npm run eject  
+  BabalやWebpackの設定を変えたいときに使う
+
+
+
+
+
 
 
