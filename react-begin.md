@@ -237,6 +237,60 @@ NGな渡し方
 <PublishButton isPublished={isPublished} onClick={publishArticle()} />
 ```
 
+## ライフサイクルとuseEffect
+### ライフサイクル
+コンポーネントのライフサイクルとは・・・  
+**「コンポーネントが生まれてから破棄されるまでの流れ」** のこと
+
+３種類のライフサイクル  
+- Mounting(配置)  
+  初期化→レンダリング→マウント後の処理  
+  
+- Updating(変更)  
+  レンダリング→更新後の処理  
+  
+- Unmounting(破棄)  
+- アンマウント前の処理  
+
+### useEffect
+関数コンポーネントでは **useEffect** という副作用Hookを使ってライフサイクルを表現することができる  
+(副作用 = レンダリングによって引き起こされる処理) → レンダリングの度に行いたい処理を記述する  
+
+``` jsx
+// 再レンダリングが行われるときは毎回実行される
+useEffect(() => {
+  console.log("Current count is...", count)
+});
+```
+
+``` jsx
+// 初回レンダリング時のみ実行
+useEffect(() => {
+  console.log("Current count is...", count)
+}, []);
+```
+
+``` jsx
+// triggerが変更されるたびに実行
+useEffect(() => {
+  console.log("Current count is...", count)
+},[trigger]);
+```
+
+``` jsx
+// trigger1かtrigger2が変更されるたびに実行
+useEffect(() => {
+  console.log("Current count is...", count)
+}, [trigger1, trigger2);
+```
+
+### クリーンアップの概念
+useEffectの中でクリーンアップ関数をreturnする  
+クリーンアップ関数は、再レンダリングが行われる前に実行される  
+
+### useEffectのユースケース
+- APIやデータベースから非同期通信でデータを取得(fetch)する
+- 特定の値が変わったらデータを再取得(refetch)する
 
 
 
