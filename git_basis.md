@@ -71,3 +71,9 @@ GitHubのローカルリポジトリで作業を行っているとき、この�
 8. `git push [repository name] [branch name]`でプッシュ
 9. `git checkout main`でmainブランチに移動
 10. `git checkout -D [branch name]`でブランチを削除
+
+## エラーハンドリング
+``` 
+fatal: not a git repository (or any of the parent directories): .git
+```
+
