@@ -30,14 +30,14 @@ React.createElement(
   'Click!'
 }
 ```
-jsxを使った場合
+JSXを使った場合
 ``` jsx
 <button className={'btn-blue'}>
   Click!
 </button>
 ```
 
-jsxの特殊な構文
+JSXの特殊な構文
 - JSXは階層構造で記述する必要がある🖐️
 - React.Fragmentで囲む(省略OK)
 
