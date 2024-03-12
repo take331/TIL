@@ -42,14 +42,15 @@ JSXの特殊な構文
 - React.Fragmentで囲む(省略OK)
 
 ダメな例
-```
+``` jsx
 return (
   <p>ramen sushi udon</p>
   <p>yakiniku sukjyaki tempura</p>
 );
 ```
+
 ※一つのコンポーネントをFragmentで囲むのは意味がない
-```
+``` jsx
 return (
   <>
     <p>ramen sushi udon</p>
