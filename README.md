@@ -24,5 +24,5 @@
 - シフト演算
 
 ### notes
-#### [words](#)
+#### [words](notes/words.md)
 - CMSについて
