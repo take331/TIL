@@ -60,3 +60,6 @@ $ rm -rf src/app
 ```
 $ yarn next dev
 ```
+
+## CSS Modules
+[name].module.css で名前を付ける必要がある  
