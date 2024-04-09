@@ -5,6 +5,9 @@
 #### [git_basis.md](git_basis.md)
 - Githubについて
 
+### [github-pages.md](github-pages.md)
+- Github Pagesについて
+  
 #### [react-begin.md](react-begin.md)
 - Reactについて
 - JSX
